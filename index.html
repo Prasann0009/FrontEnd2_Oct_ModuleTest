@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookpal</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    
+    <!-- Mobile drawer -->
+    <nav>
+        <div class="logo">
+            <img src="images/logo.svg" alt="">
+        </div>
+        <div class="menu-right">
+        <div class="nav-menu">
+            <ul>
+               <li><a href="">Home</a></li>
+               <li><a href="">Explore</a></li>
+               <li><a href="">Help</a></li>
+            </ul>
+        </div>
+        <div>
+            <a href=""><img src="images/manimage.svg" alt=""></a>
+       </div>
+    </div>
+    </nav>
+    <div class="header-image" style="display: flex;align-items: center;">
+     <div class="header-image-text" style="color: white;">
+        <p>Trending now</p>
+        <p>Mike's famous salad <br> with cheese</p>
+        <p>By John Mike</p>
+     </div>
+    </div>
+    <main>
+        <div class="filter-section">
+            <!-- Search bar -->
+            <div class="search-div">
+                <p>Search For Recipes</p>
+                <div style="display: flex;align-items: center;">
+                    <input type="text" placeholder="Search for recipes.." id="search-input">
+                  <button><img src="images/searchicon.svg" alt=""></button>
+                </div>
+                
+            </div>
+            
+
+            <!-- Recipe type filters -->
+            <div class="recipe-filter">
+            <button id="show-all">
+                <span>All Recipes</span>
+                <span>></span>
+            </button>
+            <button id="show-veg">
+                <span>Veg Recipes Only</span>
+                <span>></span>
+            </button>
+            <button id="show-non-veg">
+                <span>Non Veg Recipes</span>
+                <span>></span>
+            </button>
+            </div>
+
+
+            
+        </div>
+         <div class="recipe-section">
+            <!-- Rating filters -->
+             
+            <div>
+             <h3>Filters</h3><br><br>
+             <p><b>Rating</b></p>
+             <label><input type="radio" name="rating" id="rating-above"> 4 and Above</label>
+                <label><input type="radio" name="rating" id="rating-below"> Below 4</label></div>
+            
+            <div class="recipe-container">
+                <!-- Recipe cards will be dynamically generated here -->
+                <!-- Example card -->
+                <!-- <div class="recipe-card">
+                    <img src="recipe_image.jpg" alt="Recipe Image">
+                    <h2>Recipe Name</h2>
+                    <p>Type: Veg</p>
+                    <p>Time: 30 min</p>
+                    <p>Rating: 4.5</p>
+                    <button class="like-button">Like</button>
+                </div> -->
+            </div>
+         </div>
+       
+    </main>
+
+    <footer>
+        <!-- Footer content goes here -->
+        <div class="footer-main">
+          <div class="footer-desc">
+            <img src="images/logo.svg" alt="">
+            <p>Cookpal is a recipe website with a wide variety of delicious recipes, easy-to-use search function. Join our community and let's cook together!</p>
+          </div>
+          <div class="footer-company">
+            <h2>Company</h2>
+            <a href="#">Home</a>
+            <a href="#">Explore</a>
+            <a href="#">Team</a>
+            <a href="#">About us</a>
+            <a href="#">Activity</a>
+          </div>
+          <div class="footer-resources">
+            <h2>Resources</h2>
+            <a href="#">Blog</a>
+            <a href="#">Use Cases</a>
+            <a href="#">Testimonials</a>
+            <a href="#">Insights</a>
+          </div>
+          <div class="footer-subscribe">
+            <div><img src="images/logo.svg" alt=""></div>
+            <div><p>Ut risus mattis interdum faucibus facilisi. Facilisi purus accumsan aliquam.</p></div>
+            
+            <div>
+                <input type="email" placeholder="Your Email">
+                <button>Subscribe</button>
+            </div>
+          </div>
+        </div>
+        <div class="socials">
+         <div><i class="fa-brands fa-instagram"></i></div>
+         <div><i class="fa-brands fa-twitter"></i></div>
+         <div><i class="fa-brands fa-linkedin-in"></i></div>
+         <div><i class="fa-brands fa-facebook-f"></i></div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
