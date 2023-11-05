@@ -137,8 +137,7 @@
     box-shadow: 2px 2px 2px grey;
     box-sizing: border-box;
     width: 250px;
-    height:min
-    -content;
+    height: fit-content;
 }
 #card-div1,#card-div2
 {
@@ -260,5 +259,19 @@
     display:block;
     width: 100vw;
   }
-
+   .footer-main,.recipe-section
+   {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   }
+   .recipe-container
+   {
+    justify-content: center;
+    align-items: center;
+   }
+   .recipe-card
+   {
+    width: 150px;
+   }
 }
