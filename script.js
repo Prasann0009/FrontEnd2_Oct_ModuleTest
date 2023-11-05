@@ -138,36 +138,49 @@ function createRecipeCard(recipe) {
     card.appendChild(type);
       
     const div1 = document.createElement("div");
-    div1.id = "";
+    div1.id = "card-div1";
 
     const title = document.createElement('h2');
     title.textContent = recipe.name;
     div1.appendChild(title);
 
+    const ratingdiv = document.createElement("div");
+    ratingdiv.id = "ratingdiv";
+    const starimage = document.createElement('img');
+    starimage.src = "images/star.png";
+
     const rating = document.createElement('p');
-    rating.textContent = `Rating: ${recipe.rating}`;
-    div1.appendChild(rating);
+    rating.textContent = `${recipe.rating}`;
+    ratingdiv.appendChild(starimage);
+    ratingdiv.appendChild(rating);
+
+    div1.appendChild(ratingdiv);
 
     card.appendChild(div1);
 
-    
+    const div2 = document.createElement("div"); 
+    div2.id = "card-div2";
 
+   
     const time = document.createElement('p');
-    time.textContent = `Time: ${recipe.time}`;
-    card.appendChild(time);
-
+    time.textContent = `${recipe.time}`;
+    div2.appendChild(time);
+    
     
 
     const likeButton = document.createElement('button');
     likeButton.classList.add('like-button');
+  
     likeButton.textContent = recipe.isLiked ? 'Liked' : 'Like';
     likeButton.addEventListener('click', () => {
         recipe.isLiked = !recipe.isLiked;
+        
         likeButton.textContent = recipe.isLiked ? 'Liked' : 'Like';
         // You can also update UI or perform other actions when liking a recipe
     });
-    card.appendChild(likeButton);
+    div2.appendChild(likeButton);
 
+    card.appendChild(div2);
     return card;
 }
 
@@ -190,7 +203,8 @@ const searchInput = document.querySelector('#search-input');
 const showAllButton = document.querySelector('#show-all');
 const showVegButton = document.querySelector('#show-veg');
 const showNonVegButton = document.querySelector('#show-non-veg');
-
+const ratingAbove = document.querySelector('#rating-above');
+const ratingBelow = document.querySelector('#rating-below');
 
 searchInput.addEventListener('input', () => {
     const searchTerm = searchInput.value.toLowerCase();
@@ -215,14 +229,32 @@ showNonVegButton.addEventListener('click', () => {
     updateRecipeCards(nonVegRecipes);
 });
 
-
-const mobileMenuButton = document.querySelector('#mobile-menu-button');
-const mobileDrawer = document.querySelector('#mobile-drawer');
-
-
-mobileMenuButton.addEventListener('click', () => {
-    mobileDrawer.classList.toggle('hidden');
+ratingAbove.addEventListener('change',() => {
+    const rateAbove = recipes.filter(recipe => recipe.rating >= '4');
+    updateRecipeCards(rateAbove);
 });
+
+ratingBelow.addEventListener('change',() => {
+    const rateBelow = recipes.filter(recipe => recipe.rating < '4');
+    updateRecipeCards(rateBelow);
+});
+
+
+function myFunction() {
+    var x = document.getElementById("myLinks");
+    if (x.style.display === "block") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "block";
+    }
+  }
+// const mobileMenuButton = document.querySelector('#mobile-menu-button');
+// const mobileDrawer = document.querySelector('#mobile-drawer');
+
+
+// mobileMenuButton.addEventListener('click', () => {
+//     mobileDrawer.classList.toggle('hidden');
+// });
 // const recipeContainer = document.querySelector('.recipe-container');
 
 // recipes.forEach(recipe => {
